@@ -35,14 +35,14 @@
         <div class="category-item">
             <button class="category-card" data-category="Ladies">
                 <img src="./scheduleImage/Blouse.jpg">
-                <h4>Ladies Casual Wear</h4>
+                <h4>Kides</h4>
             </button>
         </div>
 
         <div class="category-item">
             <button class="category-card" data-category="Ladies">
                 <img src="./scheduleImage/Blouse.jpg">
-                <h4>Ladies Casual Wear</h4>
+                <h4>Home</h4>
             </button>
         </div>
 
@@ -61,10 +61,11 @@
        <div class="card">
          <img src="./scheduleImage/towel.jpg">
          <div class="card-bottom">
-            <div class="filterDiv">
+            <div class="filterDiv" id="title">
                 Bath Towel
             </div>
-             <button id="addbtn">Add</button>
+            <p id="price">Rs:250.00</p>
+             <button class="addbtn" id="addbtn">Add</button>
          </div>
         </div>
 
@@ -72,9 +73,9 @@
             <img src="./scheduleImage/Blouse.jpg">
             <div class="card-bottom">
                <div class="filterDiv">
-                   Bath Towel
+                   Blouse
                </div>
-                <button id="addbtn">Add</button>
+                <button  class="addbtn" id="addbtn">Add</button>
             </div>
            </div>
 
@@ -82,9 +83,9 @@
             <img src="./scheduleImage/curtain.jpg">
             <div class="card-bottom">
                <div class="filterDiv">
-                   Bath Towel
+                  Curtain
                </div>
-                <button id="addbtn">Add</button>
+                <button class="addbtn" id="addbtn">Add</button>
             </div>
            </div>
 
@@ -92,80 +93,129 @@
             <img src="./scheduleImage/bed.jpg">
             <div class="card-bottom">
                <div class="filterDiv">
-                   Bath Towel
+                   Bed Sheet
                </div>
-                <button id="addbtn">Add</button>
+                <button class="addbtn" id="addbtn">Add</button>
             </div>
            </div>
 
            <div class="card">
-            <img src="./scheduleImage/bed.jpg">
+            <img src="./scheduleImage/frock.jpg">
             <div class="card-bottom">
                <div class="filterDiv">
-                   Bath Towel
+                   Frock
                </div>
-                <button id="addbtn">Add</button>
+                <button class="addbtn" id="addbtn">Add</button>
             </div>
            </div>
 
            <div class="card">
-            <img src="./scheduleImage/bed.jpg">
+            <img src="./scheduleImage/saree.jpg">
             <div class="card-bottom">
                <div class="filterDiv">
-                   Bath Towel
+                   Saree
                </div>
-                <button id="addbtn">Add</button>
+                <button class="addbtn" id="addbtn">Add</button>
             </div>
            </div>
 
            <div class="card">
-            <img src="./scheduleImage/bed.jpg">
+            <img src="./scheduleImage/shirt.jpg">
             <div class="card-bottom">
                <div class="filterDiv">
-                   Bath Towel
-               </div>
-                <button id="addbtn">Add</button>
-            </div>
-           </div>
-
-
-           <div class="card">
-            <img src="./scheduleImage/bed.jpg">
-            <div class="card-bottom">
-               <div class="filterDiv">
-                   Bath Towel
-               </div>
-                <button id="addbtn">Add</button>
-            </div>
-           </div>
-
-
-           <div class="card">
-            <img src="./scheduleImage/bed.jpg">
-            <div class="card-bottom">
-               <div class="filterDiv">
-                   Bath Towel
-               </div>
-                <button id="addbtn">Add</button>
-            </div>
-           </div>
-
-
-           <div class="card">
-            <img src="./scheduleImage/bed.jpg">
-            <div class="card-bottom">
-               <div class="filterDiv">
-                   Bath Towel
+                  Shirt
                </div>
                 <button class="addbtn" id="addbtn">Add</button>
             </div>
            </div>
 
 
-           <div class="modal" id="modal">
-            <h1 style="background-color: red;">shirt gfgbdfb gdfd d
-            </h1>
+           <div class="card">
+            <img src="./scheduleImage/tshirt.jpg">
+            <div class="card-bottom">
+               <div class="filterDiv">
+                   T shirt
+               </div>
+                <button class="addbtn" id="addbtn">Add</button>
+            </div>
+           </div>
+
+
+           <div class="card">
+            <img src="./scheduleImage/denim.jpg">
+            <div class="card-bottom">
+               <div class="filterDiv">
+                   Denim
+               </div>
+                <button class="addbtn" id="addbtn">Add</button>
+            </div>
+           </div>
+
+
+           <div class="card">
+            <img src="./scheduleImage/suit.jpg">
             
+            <div class="card-bottom">
+               <div class="filterDiv">
+                   Suit
+               </div>
+                <button class="addbtn" id="addbtn">Add</button>
+            </div>
+           </div>
+
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <div class="title">
+                    <h2>Customize Your Service</h2>
+                    <button id="close">X</button>
+                    <br>
+                    <hr>
+                </div>
+                <div class="image">
+                    <img id="popup-image" src="" alt="popup-image">
+
+                </div>
+               <div class="selection">
+                    <div class="method">
+                        <h2>Select Method</h2>
+                        <div class="slider-Method">
+
+                        </div>
+                    </div>
+                     <div class="form">
+                          <h2>Select Form</h2>
+                          <div class="slider-Form">
+                            
+                          </div>
+                     </div>
+                     <div class="form">
+                        <h2>Special Note</h2>
+                        <textarea cols="38" rows="3">
+
+                        </textarea>
+
+
+                        <button class="addBasket">Add to Basket</button>
+                        
+               </div>
+
+             
+
+               <div class="counter">
+                <button id="plus">+</button>
+                <p id="count">0</p>
+                <button id="drop">-</button>
+               </div>
+             
+              
+                
+            </div>
+            
+               
+            
+        </div>
+       
      </div>
            
      

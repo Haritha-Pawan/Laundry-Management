@@ -159,6 +159,9 @@ margin-bottom: 40px;
 #btn1{
     background-color: #ffb600;
     color: black;
+    width: 430px;
+    text-align: center;
+    font-size: 17px;
     
 }
 #btn2{
