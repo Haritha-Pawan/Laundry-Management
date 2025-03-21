@@ -1,0 +1,72 @@
+
+
+.container .section{
+    background-color: white;
+}
+
+.title{
+    text-align: center;
+    font-size: 32px;
+   
+}
+
+.text-1{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #89c4c8;
+}
+
+
+.section form{
+    display: flex;
+    flex-direction: column;
+}
+
+.section label{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.section input{
+    
+    padding: 10px;
+    border-radius: 5px;
+   border: transparent;
+}
+
+#submit{
+    background-color: #ffb600;
+    width: 60%;
+    display: flex;
+   margin: 20px auto ;
+}
+
+
+.option{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+}
+
+.card{
+    height: 200px;
+    text-align: center;
+    background-color: #f4f9fc;
+}
+
+.card .value{
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.card .icon{
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    margin: auto;
+}
+
+.icon-text{
+    color: #89c4c8;
+}
