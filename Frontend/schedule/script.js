@@ -25,20 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             closebtn.addEventListener('click', () => {
                 modal.style.visibility = 'hidden';
+           
+              
+           
             })
         });
     });
 
   
 
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) { 
-            modal.style.visibility = 'none';
-        }
-    });
+
+
+  
+    
 });
-
-
 
 
 
@@ -68,7 +68,10 @@ drop.addEventListener('click',()=>{
         count--;
         counter.textContent=count;
     }
-})
+});
+
+
+
 
 
 
