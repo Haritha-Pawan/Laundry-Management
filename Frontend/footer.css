@@ -120,10 +120,9 @@ footer {
     position: relative;
     left: 550px;
     text-overflow: clip;
-    font-weight: 100;
+    font-weight: 400;
     color: #92999f;
     font-size: 14px;
-    opacity: 0.6;
 }
 
 .footer-distributed .footer-icons {

@@ -1,4 +1,10 @@
 
+function clickfun(){
+  window.location='/Frontend/index.html'
+  
+}
+
+
 document.getElementById("registerForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
