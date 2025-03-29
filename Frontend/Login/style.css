@@ -15,7 +15,10 @@ body {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     background-image: url("bg.jpg");
-   
+
+     background-size: cover;
+     background-repeat: no-repeat;
+
 }
 
 .modal {
