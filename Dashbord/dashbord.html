@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Management Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('css/tailwindmain.css')}}">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-blue-800">
+                <div class="flex items-center justify-center h-16 px-4 bg-blue-900">
+                    <span class="text-white text-xl font-semibold">LaundryPro</span>
+                </div>
+                <div class="flex flex-col flex-grow px-4 py-4 overflow-y-auto">
+                    <nav class="space-y-1">
+                        <!-- Dashboard Tab -->
+                        <a href="#" class="flex items-center px-4 py-3 text-white bg-blue-900 rounded-lg">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                        
+                        <!-- Machines Tab -->
+                        <a href="Machine.html" class="flex items-center px-4 py-3 text-blue-200 hover:text-white hover:bg-blue-700 rounded-lg">
+                            <i class="fas fa-washer mr-3"></i>
+                            Machines
+                        </a>
+                        
+                        <!-- Staff Tab -->
+                        <a href="staff.html" class="flex items-center px-4 py-3 text-blue-200 hover:text-white hover:bg-blue-700 rounded-lg">
+                            <i class="fas fa-users mr-3"></i>
+                            Staff
+                        </a>
+                        
+                        <!-- Orders Tab -->
+                        <a href="#" class="flex items-center px-4 py-3 text-blue-200 hover:text-white hover:bg-blue-700 rounded-lg">
+                            <i class="fas fa-clipboard-list mr-3"></i>
+                            Orders
+                        </a>
+                        
+                        <!-- Tracking Tab -->
+                        <a href="Tracking.html" class="flex items-center px-4 py-3 text-blue-200 hover:text-white hover:bg-blue-700 rounded-lg">
+                            <i class="fas fa-map-marked-alt mr-3"></i>
+                            Tracking
+                        </a>
+                    </nav>
+                    
+                    <div class="mt-auto mb-4">
+                        <div class="px-4 py-3 text-white bg-blue-700 rounded-lg">
+                            <div class="flex items-center">
+                                <img class="w-8 h-8 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile">
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium">Sarah Johnson</p>
+                                    <p class="text-xs text-blue-200">Admin</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Top Navigation -->
+            <header class="flex items-center justify-between px-6 py-4 bg-white border-b">
+                <div class="flex items-center">
+                    <button class="md:hidden text-gray-500 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="ml-4 text-xl font-semibold text-gray-800">Dashboard</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-500 focus:outline-none">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="text-gray-500 focus:outline-none">
+                        <i class="fas fa-envelope"></i>
+                    </button>
+                    <div class="relative">
+                        <input type="text" class="w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-lg focus:outline-none" placeholder="Search...">
+                        <button class="absolute right-0 top-0 mt-2 mr-3 text-gray-500 focus:outline-none">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Dashboard Content -->
+            <main class="flex-1 overflow-y-auto p-6">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <!-- Total Orders -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                                <i class="fas fa-clipboard-list text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-500">Total Orders</p>
+                                <p class="text-2xl font-semibold text-gray-800">1,245</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-green-500 text-sm font-medium">+12.5% from last week</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Active Machines -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-green-100 text-green-600">
+                                <i class="fas fa-washer text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-500">Active Machines</p>
+                                <p class="text-2xl font-semibold text-gray-800">18/24</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-green-500 text-sm font-medium">+2 this week</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Staff On Duty -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-500">Staff On Duty</p>
+                                <p class="text-2xl font-semibold text-gray-800">6/8</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-red-500 text-sm font-medium">-1 today</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Revenue -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                                <i class="fas fa-dollar-sign text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-500">Revenue</p>
+                                <p class="text-2xl font-semibold text-gray-800">$8,245</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-green-500 text-sm font-medium">+18.7% from last week</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Orders and Machine Status -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <!-- Recent Orders -->
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="px-6 py-4 border-b">
+                            <h2 class="text-lg font-semibold text-gray-800">Recent Orders</h2>
+                        </div>
+                        <div class="divide-y">
+                            <!-- Order Item -->
+                            <div class="px-6 py-4 flex items-center justify-between hover:bg-gray-50">
+                                <div>
+                                    <p class="font-medium">#ORD-2023-0012</p>
+                                    <p class="text-sm text-gray-500">John Doe • 5 items</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-medium">$45.00</p>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">Completed</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Order Item -->
+                            <div class="px-6 py-4 flex items-center justify-between hover:bg-gray-50">
+                                <div>
+                                    <p class="font-medium">#ORD-2023-0011</p>
+                                    <p class="text-sm text-gray-500">Sarah Smith • 3 items</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-medium">$28.50</p>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">In Progress</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Order Item -->
+                            <div class="px-6 py-4 flex items-center justify-between hover:bg-gray-50">
+                                <div>
+                                    <p class="font-medium">#ORD-2023-0010</p>
+                                    <p class="text-sm text-gray-500">Mike Johnson • 7 items</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-medium">$63.00</p>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">Pending</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Order Item -->
+                            <div class="px-6 py-4 flex items-center justify-between hover:bg-gray-50">
+                                <div>
+                                    <p class="font-medium">#ORD-2023-0009</p>
+                                    <p class="text-sm text-gray-500">Emily Wilson • 2 items</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-medium">$18.00</p>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">In Progress</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-3 border-t text-center">
+                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">View All Orders</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Machine Status -->
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="px-6 py-4 border-b">
+                            <h2 class="text-lg font-semibold text-gray-800">Machine Status</h2>
+                        </div>
+                        <div class="divide-y">
+                            <!-- Machine Item -->
+                            <div class="px-6 py-4 flex items-center justify-between hover:bg-gray-50">
+                                <div>
+                                    <p class="font-medium">Washer #W-001</p>
+                                    <p class="text-sm text-gray-500">Capacity: 10kg</p>
+                                </div>
+                                <div>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">Running</span>
+                                    <p class="text-sm text-gray-500 mt-1">30 mins remaining</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Machine Item -->
+                            <div class="px-6 py-4 flex items-center justify-between hover:bg-gray-50">
+                                <div>
+                                    <p class="font-medium">Dryer #D-005</p>
+                                    <p class="text-sm text-gray-500">Capacity: 12kg</p>
+                                </div>
+                                <div>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">Idle</span>
+                                    <p class="text-sm text-gray-500 mt-1">Available</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Machine Item -->
+                            <div class="px-6 py-4 flex items-center justify-between hover:bg-gray-50">
+                                <div>
+                                    <p class="font-medium">Washer #W-003</p>
+                                    <p class="text-sm text-gray-500">Capacity: 8kg</p>
+                                </div>
+                                <div>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-red-100 text-red-800">Maintenance</span>
+                                    <p class="text-sm text-gray-500 mt-1">Scheduled</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Machine Item -->
+                            <div class="px-6 py-4 flex items-center justify-between hover:bg-gray-50">
+                                <div>
+                                    <p class="font-medium">Dryer #D-002</p>
+                                    <p class="text-sm text-gray-500">Capacity: 10kg</p>
+                                </div>
+                                <div>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">Running</span>
+                                    <p class="text-sm text-gray-500 mt-1">15 mins remaining</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-6 py-3 border-t text-center">
+                            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">View All Machines</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Staff Activity and Order Chart -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Staff Activity -->
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="px-6 py-4 border-b">
+                            <h2 class="text-lg font-semibold text-gray-800">Staff Activity</h2>
+                        </div>
+                        <div class="divide-y">
+                            <!-- Staff Item -->
+                            <div class="px-6 py-4 flex items-center hover:bg-gray-50">
+                                <img class="w-10 h-10 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Staff">
+                                <div class="ml-4">
+                                    <p class="font-medium">Lisa Ray</p>
+                                    <p class="text-sm text-gray-500">Processing Order #ORD-2023-0011</p>
+                                </div>
+                                <div class="ml-auto">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">Active</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Staff Item -->
+                            <div class="px-6 py-4 flex items-center hover:bg-gray-50">
+                                <img class="w-10 h-10 rounded-full" src="https://randomuser.me/api/portraits/men/42.jpg" alt="Staff">
+                                <div class="ml-4">
+                                    <p class="font-medium">David Miller</p>
+                                    <p class="text-sm text-gray-500">Handling customer pickup</p>
+                                </div>
+                                <div class="ml-auto">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">Active</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Staff Item -->
+                            <div class="px-6 py-4 flex items-center hover:bg-gray-50">
+                                <img class="w-10 h-10 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Staff">
+                                <div class="ml-4">
+                                    <p class="font-medium">Emma Wilson</p>
+                                    <p class="text-sm text-gray-500">On break until 2:30 PM</p>
+                                </div>
+                                <div class="ml-auto">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">Away</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Staff Item -->
+                            <div class="px-6 py-4 flex items-center hover:bg-gray-50">
+                                <img class="w-10 h-10 rounded-full" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Staff">
+                                <div class="ml-4">
+                                    <p class="font-medium">James Brown</p>
+                                    <p class="text-sm text-gray-500">Day off</p>
+                                </div>
+                                <div class="ml-auto">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800">Off</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Chart -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-lg font-semibold text-gray-800">Weekly Order Stats</h2>
+                            <select class="bg-gray-100 border border-gray-300 text-gray-700 py-1 px-3 rounded-lg focus:outline-none">
+                                <option>This Week</option>
+                                <option>Last Week</option>
+                                <option>This Month</option>
+                            </select>
+                        </div>
+                        <div class="h-64">
+                            <!-- Chart Placeholder - You would replace this with a real chart library -->
+                            <div class="flex items-end h-48 mt-4 space-x-2">
+                                <div class="flex-1 bg-blue-200 rounded-t" style="height: 30%"></div>
+                                <div class="flex-1 bg-blue-300 rounded-t" style="height: 50%"></div>
+                                <div class="flex-1 bg-blue-400 rounded-t" style="height: 70%"></div>
+                                <div class="flex-1 bg-blue-500 rounded-t" style="height: 90%"></div>
+                                <div class="flex-1 bg-blue-600 rounded-t" style="height: 60%"></div>
+                                <div class="flex-1 bg-blue-400 rounded-t" style="height: 40%"></div>
+                                <div class="flex-1 bg-blue-300 rounded-t" style="height: 80%"></div>
+                            </div>
+                            <div class="flex justify-between mt-2 text-xs text-gray-500">
+                                <span>Mon</span>
+                                <span>Tue</span>
+                                <span>Wed</span>
+                                <span>Thu</span>
+                                <span>Fri</span>
+                                <span>Sat</span>
+                                <span>Sun</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
