@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking | LaundryPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .order-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .tracking-step {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+        .tracking-step:before {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #E5E7EB;
+        }
+        .tracking-step:last-child:before {
+            display: none;
+        }
+        .tracking-dot {
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid white;
+            z-index: 1;
+        }
+        .tracking-step.active .tracking-dot, .tracking-step.completed .tracking-dot {
+            background: #10B981;
+        }
+        .tracking-step.inactive .tracking-dot {
+            background: #E5E7EB;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-white border-r border-gray-200">
+                <div class="flex items-center justify-center h-16 px-4 border-b border-gray-200">
+                    <span class="text-blue-600 text-xl font-medium">LaundryPro</span>
+                </div>
+                <nav class="flex flex-col flex-grow px-4 py-4 space-y-1">
+                    <a href="dashbord.html" class="flex items-center px-4 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">
+                        <span class="material-icons mr-3">dashboard</span>Dashboard
+                    </a>
+                    <a href="Machine.html" class="flex items-center px-4 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">
+                        <span class="material-icons mr-3">local_laundry_service</span>Machines
+                    </a>
+                    <a href="staff.html" class="flex items-center px-4 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">
+                        <span class="material-icons mr-3">people</span>Staff
+                    </a>
+                    <a href="order" class="flex items-center px-4 py-3 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg">
+                        <span class="material-icons mr-3">receipt</span>Orders
+                    </a>
+                    <a href="Tracking.html" class="flex items-center px-4 py-3 bg-blue-50 text-blue-600 rounded-lg">
+                        <span class="material-icons mr-3">track_changes</span>Tracking
+                    </a>
+                </nav>
+                <div class="mt-auto mb-4 px-4 py-3 bg-gray-50 rounded-lg">
+                    <div class="flex items-center">
+                        <img class="w-9 h-9 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile">
+                        <div class="ml-3">
+                            <p class="text-sm font-medium">Sarah Johnson</p>
+                            <p class="text-xs text-gray-500">Admin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="flex flex-col flex-1">
+            <!-- Top Navigation -->
+            <header class="flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200">
+                <h1 class="text-xl font-medium">Order Tracking</h1>
+                <div class="flex items-center space-x-4">
+                    <input type="text" class="pl-10 pr-4 py-2 rounded-lg bg-gray-100 focus:ring focus:ring-blue-500" placeholder="Search orders...">
+                    <button class="text-gray-500 hover:text-gray-700"><span class="material-icons">notifications</span></button>
+                    <button class="text-gray-500 hover:text-gray-700"><span class="material-icons">mail</span></button>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <main class="p-6 space-y-6 overflow-y-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 border rounded-lg shadow hover:shadow-md">
+                        <div class="flex items-center">
+                            <span class="material-icons bg-blue-100 text-blue-600 p-3 rounded-full">receipt</span>
+                            <div class="ml-4">
+                                <p>Total Orders</p>
+                                <p class="text-2xl font-semibold">142</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 border rounded-lg shadow hover:shadow-md">
+                        <div class="flex items-center">
+                            <span class="material-icons bg-green-100 text-green-600 p-3 rounded-full">check_circle</span>
+                            <div class="ml-4">
+                                <p>Completed</p>
+                                <p class="text-2xl font-semibold">98</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 border rounded-lg shadow hover:shadow-md">
+                        <div class="flex items-center">
+                            <span class="material-icons bg-yellow-100 text-yellow-600 p-3 rounded-full">pending</span>
+                            <div class="ml-4">
+                                <p>In Progress</p>
+                                <p class="text-2xl font-semibold">32</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 border rounded-lg shadow hover:shadow-md">
+                        <div class="flex items-center">
+                            <span class="material-icons bg-red-100 text-red-600 p-3 rounded-full">schedule</span>
+                            <div class="ml-4">
+                                <p>Pending</p>
+                                <p class="text-2xl font-semibold">12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Table -->
+                <div class="bg-white p-6 border rounded-lg overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr>
+                                <th>Order #</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Status</th>
+                                <th>Progress</th>
+                                <th>Completion</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example row -->
+                            <tr>
+                                <td>#ORD-0012</td>
+                                <td>John Smith</td>
+                                <td>5 items</td>
+                                <td>In Progress</td>
+                                <td><div class="w-full bg-gray-200 rounded-full h-2"><div class="bg-blue-500 h-2 rounded-full w-2/3"></div></div></td>
+                                <td>Today, 4:30 PM</td>
+                                <td>Actions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
