@@ -1,6 +1,6 @@
 JAVA based web application for laundry management
 
-Technologies used:
+
 
     
 
