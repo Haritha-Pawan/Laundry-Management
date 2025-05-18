@@ -34,17 +34,17 @@ function incrementCounts() {
         if (elapsedTime >= duration) {
             clearInterval(interval);
         }
-    }, 10);  // Update every 10 milliseconds
+    }, 10);  
 }
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            incrementCounts();  // Start the counting once "About Us" is in view
+            incrementCounts();  
         }
     });
-}, { threshold: 0.5 }); // Trigger when 50% of "About Us" section is in view
+}, { threshold: 0.5 }); 
 
-// Target the "About Us" section
+
 const aboutSection = document.getElementById('about-us');
-observer.observe(aboutSection);  // Start observing the "About Us" section
+observer.observe(aboutSection);  
